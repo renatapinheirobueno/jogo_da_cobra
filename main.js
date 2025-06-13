@@ -21,6 +21,15 @@ function criarTabuleiro() {
         elemento.style.gridColumnStart = segmento.x;
         elemento.classList.add('snake');
         tabuleiro.appendChild(elemento);
-        
+
     } );
+    function gerarComida() {
+        let novaComida;
+        while (!novaComida || posicaoOcupada(novaComida)) {
+            novaComida = {
+                x:Math.floor(Math.random()*18)+2,
+                y:Math.floor(Math.random()*18)+2
+            };
+        }
+    }
 }
