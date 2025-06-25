@@ -1,4 +1,4 @@
-let cobra = [{x:19, y:9}];
+let cobra = [{x:10, y:10}];
 let comida = gerarComida();
 let direcao = 'DIREITA';
 let velocidade = 150;
@@ -40,8 +40,7 @@ function criarTabuleiro() {
         return novaComida;
     }
 function posicaoOcupada(posicao) {
-    return cobra.some(segmento=> segmento.x === posicao
-    x && segmento.y===posicao.y);
+    return cobra.some(segmento=> segmento.x === posicao.x && segmento.y === posicao.y);
 }   
 function mudarDirecao(event) {
     const tecla = event.key;
@@ -107,4 +106,8 @@ function verificarColisao(cabeca) {
             return true
         }
     }
+
+    return false;
 }
+
+iniciar();
